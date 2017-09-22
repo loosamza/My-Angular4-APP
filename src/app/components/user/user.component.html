@@ -1,0 +1,70 @@
+<div class="jumbotron">
+    <div class="container text-center">
+      <h1>My Portfolio</h1>      
+      
+    </div>
+  </div>
+    
+  <div class="container-fluid bg-3">    
+    <h3 class="text-center">Angular WorkShop</h3><br>
+    <div class="row">
+      <div class="col-sm-12">
+          <div class="from-group">
+              
+                <div class="col-sm-6">
+                  <h1>Detail</h1>
+                  <ul>
+                    <li>
+                      <b>Name: </b> {{ name }}
+                    </li>
+                    <li><b>Age : </b> {{ age }}</li>
+                    <li><b>Email : </b> {{ email }}</li>
+                    <li><b>Address : </b> {{ address.street }} , {{ address.city }} , {{ address.province }} , {{ address.postcode }} </li>
+                  </ul>
+              
+                </div>
+                <div class="col-sm-6">
+                  <h1>Edit Profile</h1>
+                  <button class="btn btn-primary"  (click)="toggleEdit()">Edit</button>
+                  <div *ngIf="isEditable == true">
+                    <form>
+                      <label for="name"><b>Name : </b></label>
+                      <input type="text" [(ngModel)]="name" name="name" class="form-control">
+                      <label for="name"><b>Age : </b></label>
+                      <input type="text" [(ngModel)]="age" name="age" class="form-control">
+                      <label for="name"><b>Email : </b></label>
+                      <input type="text" [(ngModel)]="email" name="email" class="form-control">
+              
+                    </form>
+                  </div>
+              
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <label for="">Skill</label>
+                  <form (submit)="addSkill(skill.value)">
+                    <div>
+                      <input type="text" class="form-control" #skill placeholder="Add Your Skill">
+                    </div>
+                  </form>
+                  <ul>
+                    <li *ngFor="let skill of skills; let i = index">
+                      {{ i+1 }}. {{ skill }}
+                      <button (click)="delSkill(skill)"> X </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-sm-6">
+                  <label for="todo">Todo List</label>
+                  <ul>
+                    <li *ngFor="let todo of todoList;"><b>{{ todo.title }} </b> {{todo.id}}</li>
+                  </ul>
+                </div>
+              </div>
+      </div>
+    </div>
+  </div><br>
+  
+  
+
