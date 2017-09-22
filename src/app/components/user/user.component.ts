@@ -10,20 +10,20 @@ import { TodoService } from '../../services/todo.service';
 })
 export class UserComponent implements OnInit {
 
-  private name: string;
-  private age: number;
-  private email: string;
-  private isEditable:boolean = true;
+   name: string;
+   age: number;
+   email: string;
+   isEditable:boolean = true;
   // dictionary
-  private address: {
+   address: {
     street: string,
     city: string,
     province: string,
     postcode: string
   }
   // array
-  private skills: string[];
-  private todoList:Todo[];
+   skills: string[];
+   todoList:Todo[];
 
   constructor(private todoService : TodoService ) {
     
